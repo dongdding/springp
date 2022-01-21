@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="resources/resource.js"></script>
+<script>
+	function authentication() {
+		
+		const form = document.getElementsByName("login")[0];
+		const userData = [document.getElementsByName("meCode")[0],
+						  document.getElementsByName("mePassword")[0]];
+		const message = ["아이디 입력","패스워드 입력"];
+		
+		for(let index = 0; index < userData.length; index++) {
+			if(!isEmpty(userData[index])) {
+				alert(message[index])
+				return;
+			}
+		}
+		
+		form.submit();
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Stylish&display=swap');
+	body{font-family: 'Black Han Sans', sans-serif;
+		font-family: 'Stylish', sans-serif;
+		}
+	input{font-family: 'Black Han Sans', sans-serif;
+		font-family: 'Stylish', sans-serif;
+		}
+	.boxbox {width:100%; height: 100%; background-color:#FFFFE9; 
+			 position:absolute;
+			 top: 50%; left:50%; transform: translate(-50%, -50%);}
+	#top {width:85%; height:140px; position:absolute; background-color:#FFFFE9; 
+		  top: 15%; left:50%; transform: translate(-50%, -50%); font-size:70pt; font-weight:600;
+		  text-align:center;  line-height:130px; color:#CF6E36;}
+	.box {width: 50%; height: 50%; position:absolute; background-color:#CF6E36; 
+		  top: 50%; left:50%; transform: translate(-50%, -35%); border:7px solid #872600;
+	      text-align:center;
+	      border-radius: 30px 30px 30px 30px;}
+	input {width:98%; height:48px; text-align:center;}
+	.inputId {height:50px; line-height:20px; border-radius: 25px 25px 0px 0px;}
+	#idInput {height:50px; line-height:20px; border-radius: 25px 25px 0px 0px; border:1px solid #FFFFFF; font-size:20pt;}
+	.inputPass {height:50px; line-height:20px;}
+	#passInput {height:50px; line-height:20px; border:1px solid #FFFFFF; font-size:20pt;}
+	#loginClick {height:50px; line-height:20px;}
+	#clickLogin {width:99%; height:50px; line-height:20px; border-radius: 0px 0px 25px 25px; border:1px solid #FFFFFF; font-size:20pt;}
+	.boxx {position:absolute; top: 50%; left:50%; transform: translate(-50%, -50%);
+		   width:65%; float:left;}
+	.Logg {position:absolute; width:10%; height:99%; background-color:#000000;}
+</style>
+
+</head>
+<body>
+<form action = "Access" method = "post" name="login">
+<div class="boxbox">
+	<div id="top">Welcome to ONION</div>
+		<div class="box">
+			
+				<div class="boxx">
+					<div class="inputId">
+						<input id="idInput" type = "text" name = "meCode" placeholder = "아이디 입력" />
+					</div>
+					<p></p>
+					<div class="inputPass">
+					<input id="passInput" type = "password" name = "mePassword" placeholder = "비밀번호 입력" />
+					</div>
+					<p></p>
+					<div id="loginClick">
+					<input id="clickLogin" type = "button" value = "Login" onClick = "authentication()" />
+					</div>
+				</div>
+			
+		</div>
+		
+</div>
+</form>
+</body>
+</html>
